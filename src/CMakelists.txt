@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.25)
+project(curves)
+
+set(CMAKE_CXX_STANDARD 17)
+
+file(COPY Headers/ DESTINATION ${CMAKE_BINARY_DIR}/include)
+
+include_directories(Headers Sources)
+
+file (GLOB SOURCES "Sources/*.cpp")
+
+add_definitions(-Dcurves_EXPORT)
+
+add_library(curves SHARED ${SOURCES})
+
+
